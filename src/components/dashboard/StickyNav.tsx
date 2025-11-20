@@ -126,10 +126,26 @@ export const StickyNav = () => {
               <Button
                 variant="ghost"
                 size="sm"
+                onClick={() => handleNavigate("innovation-strengths")}
+                className="text-sm"
+              >
+                Innovation
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
                 onClick={() => handleNavigate("alternative")}
                 className="text-sm"
               >
                 Alternative
+              </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => handleNavigate("strategic-roadmap")}
+                className="text-sm"
+              >
+                Roadmap
               </Button>
               <Button
                 variant="ghost"
