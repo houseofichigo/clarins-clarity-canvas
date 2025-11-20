@@ -30,7 +30,10 @@ const timeline = [
 export const AlternativeStrategy = () => {
   return (
     <div className="container mx-auto px-6 py-8">
-      <h2 className="text-2xl font-bold text-foreground mb-6">Alternative Strategy: 2026 Recommended Portfolio</h2>
+      <div className="mb-8">
+        <h2 className="text-h1 font-bold text-foreground mb-2">Alternative Strategy: 2026 Recommended Portfolio</h2>
+        <p className="text-muted-foreground">Optimized budget allocation delivering 5–15x performance improvement across all metrics</p>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <Card className="p-6">
@@ -99,21 +102,33 @@ export const AlternativeStrategy = () => {
           Sequenced, multi-channel approach sustains visibility and B2B acquisition all year
         </p>
 
-        <div className="space-y-4">
+        <div className="space-y-3">
           {timeline.map((item, idx) => (
-            <div key={idx} className="flex items-start gap-4 p-4 rounded-lg bg-muted/30 border border-border hover:bg-muted/50 transition-colors">
-              <div className="flex-shrink-0">
-                <Badge variant="outline" className="font-mono">
-                  {item.quarter}
-                </Badge>
+            <div key={idx} className="relative pl-8 pb-6 last:pb-0">
+              {/* Timeline Line */}
+              {idx < timeline.length - 1 && (
+                <div className="absolute left-3 top-8 w-0.5 h-full bg-gradient-to-b from-primary to-primary/20" />
+              )}
+              
+              {/* Timeline Dot */}
+              <div className="absolute left-0 top-1 w-6 h-6 rounded-full bg-primary flex items-center justify-center shadow-lg">
+                <div className="w-2 h-2 rounded-full bg-white" />
               </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-2">
-                  <h4 className="font-semibold text-foreground">{item.event}</h4>
-                  <ArrowRight className="h-4 w-4 text-muted-foreground" />
-                  <span className="text-sm text-muted-foreground">{item.focus}</span>
+              
+              <div className="flex items-start gap-4 p-5 rounded-lg bg-gradient-to-r from-muted/30 to-muted/10 border border-border hover:border-primary/30 hover:shadow-md transition-all group">
+                <div className="flex-shrink-0">
+                  <Badge variant="outline" className="font-mono text-xs group-hover:border-primary transition-colors">
+                    {item.quarter}
+                  </Badge>
                 </div>
-                <p className="text-sm text-primary font-medium">{item.investment}</p>
+                <div className="flex-1">
+                  <div className="flex items-center gap-2 mb-2">
+                    <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors">{item.event}</h4>
+                    <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+                    <span className="text-sm text-muted-foreground">{item.focus}</span>
+                  </div>
+                  <p className="text-sm font-medium text-gradient-primary">{item.investment}</p>
+                </div>
               </div>
             </div>
           ))}
