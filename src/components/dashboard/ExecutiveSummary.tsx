@@ -55,41 +55,41 @@ export const ExecutiveSummary = () => {
             </div>
           </Card>
 
-          {/* CENTER: Financial Impact */}
-          <Card className="p-8 bg-card hover-scale shadow-xl border-2 border-gold/30 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gold/5 rounded-full -mr-16 -mt-16" />
+          {/* CENTER: Strategic Reallocation */}
+          <Card className="p-8 bg-card hover-scale shadow-xl border-2 border-info/30 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-info/5 rounded-full -mr-16 -mt-16" />
             <div className="relative">
               <div className="flex items-center justify-between mb-6">
-                <div className="w-14 h-14 rounded-full bg-gold/10 flex items-center justify-center">
-                  <TrendingDown className="h-8 w-8 text-gold" />
+                <div className="w-14 h-14 rounded-full bg-info/10 flex items-center justify-center">
+                  <TrendingUp className="h-8 w-8 text-info" />
                 </div>
-                <Badge className="text-lg px-4 py-1.5 bg-gold text-gold-foreground">
-                  Savings
+                <Badge className="text-lg px-4 py-1.5 bg-info text-white">
+                  Reallocation
                 </Badge>
               </div>
               <h2 className="text-h1 font-bold text-foreground mb-3">
-                Financial Impact
+                Strategic Reallocation
               </h2>
               <div className="mb-4">
-                <div className="text-5xl font-bold text-gradient-gold mb-2">
-                  €565K
+                <div className="text-5xl font-bold text-info mb-2">
+                  €460–670K
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  Budget saved vs €350–450K VivaTech investment
+                  Alternative portfolio investment vs €350–450K VivaTech cost
                 </p>
               </div>
               <div className="space-y-2 mt-6">
                 <div className="flex items-center gap-2 text-sm">
-                  <div className="w-2 h-2 rounded-full bg-gold" />
-                  <span className="text-foreground">180–300x cost efficiency gap</span>
+                  <div className="w-2 h-2 rounded-full bg-info" />
+                  <span className="text-foreground">Delivers 3–5x ROI vs 0.1–2.5x</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <div className="w-2 h-2 rounded-full bg-gold" />
-                  <span className="text-foreground">€29–56K per qualified lead</span>
+                  <div className="w-2 h-2 rounded-full bg-info" />
+                  <span className="text-foreground">255,500 buyers vs 2,000–3,000</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <div className="w-2 h-2 rounded-full bg-gold" />
-                  <span className="text-foreground">ROI: 0.1–2.5x vs 3–5x target</span>
+                  <div className="w-2 h-2 rounded-full bg-info" />
+                  <span className="text-foreground">€0.59–0.78 per attendee vs €140–180</span>
                 </div>
               </div>
             </div>
@@ -148,8 +148,9 @@ export const ExecutiveSummary = () => {
               </h3>
               <p className="text-foreground leading-relaxed">
                 VivaTech delivers <span className="font-bold text-primary">150–250x fewer qualified buyers</span> at{" "}
-                <span className="font-bold text-primary">180–300x higher cost</span> per attendee. The alternative beauty event portfolio 
-                provides superior ROI, sustained visibility, and direct access to target audiences. 
+                <span className="font-bold text-primary">180–300x higher cost</span> per attendee. While the alternative portfolio requires 
+                <span className="font-bold text-primary"> €10–220K additional budget</span>, it delivers dramatically better returns with 
+                <span className="font-bold text-primary"> 3–5x ROI</span> and significantly lower cost per qualified lead (€0.59–0.78 vs €140–180). 
                 <span className="font-bold text-primary"> Confidence Level: 80%</span> based on data-backed analysis.
               </p>
             </div>
