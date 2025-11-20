@@ -57,17 +57,9 @@ const Index = () => {
       <section id="decision-framework" className="container mx-auto px-6 py-8 print-page-break">
         <div className="mb-8">
           <h2 className="text-h1 font-bold text-foreground mb-2">Decision Framework & Risk Analysis</h2>
-          <div className="space-y-3 text-muted-foreground max-w-4xl">
-            <p>
-              This section applies a structured decision-making framework to evaluate whether VivaTech 2025 meets the strategic and financial thresholds required for a GO decision. The analysis combines quantitative benchmarks (ROI, cost-per-attendee, audience reach) with qualitative factors (brand fit, competitive positioning, strategic alternatives) to provide a comprehensive assessment.
-            </p>
-            <p>
-              The framework consists of three interconnected components: <span className="font-semibold text-foreground">GO Conditions Matrix</span> establishes the minimum criteria that must be met for participation; <span className="font-semibold text-foreground">Decision Tree</span> provides a logical evaluation pathway showing where VivaTech fails to meet threshold requirements; and <span className="font-semibold text-foreground">Risk Matrix</span> quantifies the likelihood and impact of strategic risks should Clarins proceed despite unfavorable conditions.
-            </p>
-            <p>
-              This integrated analysis synthesizes insights from ROI performance (Section 3), competitive dynamics (Section 5), and alternative strategies (Section 6) to support a data-backed recommendation on this €350–450K investment decision.
-            </p>
-          </div>
+          <p className="text-muted-foreground">
+            Comprehensive evaluation of GO conditions, thresholds, and strategic risks
+          </p>
         </div>
         
         <div className="grid grid-cols-1 gap-8">
