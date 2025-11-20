@@ -2,10 +2,8 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { TrendingDown, TrendingUp, CheckCircle2, XCircle, Mic } from "lucide-react";
 import { PodcastPlayer } from "./PodcastPlayer";
-
 export const ExecutiveSummary = () => {
-  return (
-    <div className="w-full bg-gradient-to-br from-primary/5 via-background to-info/5 border-b border-border">
+  return <div className="w-full bg-gradient-to-br from-primary/5 via-background to-info/5 border-b border-border">
       <div className="container mx-auto px-6 py-12">
         <div className="text-center mb-8">
           <Badge variant="outline" className="mb-4 text-base px-4 py-2 border-gold text-gold font-semibold">
@@ -35,15 +33,12 @@ export const ExecutiveSummary = () => {
                     <span>🎙️</span> Executive Audio Briefing
                   </h3>
                   <p className="text-muted-foreground">
-                    5-minute strategic overview and recommendation
+                    14-minute strategic overview and recommendation
                   </p>
                 </div>
               </div>
               
-              <PodcastPlayer 
-                src="/Clarins_Should_Skip_VivaTech_Save_Money.mp3"
-                title="VivaTech 2025 Strategic Decision"
-              />
+              <PodcastPlayer src="/Clarins_Should_Skip_VivaTech_Save_Money.mp3" title="VivaTech 2025 Strategic Decision" />
             </div>
           </Card>
         </div>
@@ -187,6 +182,5 @@ export const ExecutiveSummary = () => {
           </div>
         </Card>
       </div>
-    </div>
-  );
+    </div>;
 };
