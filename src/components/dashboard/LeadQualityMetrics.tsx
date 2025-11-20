@@ -1,5 +1,6 @@
 import { Card } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
+import { MethodologyTooltip } from "./MethodologyTooltip";
 
 const conversionData = [
   { name: "VivaTech", rate: 15, min: 10, max: 20 },
@@ -7,8 +8,8 @@ const conversionData = [
 ];
 
 const costPerLeadData = [
-  { name: "VivaTech", cost: 16, min: 12, max: 20, label: "€12–20K" },
-  { name: "Cosmoprof", cost: 4.25, min: 3.5, max: 5, label: "€3.5–5K" },
+  { name: "VivaTech", cost: 42.5, min: 29, max: 56, label: "€29–56K" },
+  { name: "Cosmoprof", cost: 3.25, min: 2.5, max: 4, label: "€2.5–4K" },
 ];
 
 const mediaDurationData = [
@@ -54,7 +55,7 @@ export const LeadQualityMetrics = () => {
         <Card className="p-6">
           <h3 className="text-lg font-semibold mb-4">Cost per Qualified Lead</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Beauty events deliver 3–4x lower cost per lead
+            Beauty events deliver 13–15x lower cost per lead
           </p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={costPerLeadData}>
@@ -74,6 +75,13 @@ export const LeadQualityMetrics = () => {
               <Bar dataKey="cost" fill="hsl(var(--chart-5))" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
+          <div className="mt-4 pt-4 border-t border-border">
+            <MethodologyTooltip
+              title="Cost-Per-Lead Calculation"
+              methodology="VivaTech: €350–450K total investment ÷ 8–12 expected qualified leads = €29–56K per lead. Cosmoprof: €150–200K investment ÷ 50–80 expected leads = €2.5–4K per lead. Ranges reflect optimistic vs conservative scenarios based on industry standard conversion rates."
+              sources={["Industry standard lead capture rates (8–15%)", "Beauty event conversion rates (35–50%)", "VivaTech pricing documentation"]}
+            />
+          </div>
         </Card>
 
         <Card className="p-6">

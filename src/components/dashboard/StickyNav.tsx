@@ -112,6 +112,14 @@ export const StickyNav = () => {
               >
                 Alternative
               </Button>
+              <Button
+                variant="ghost"
+                size="sm"
+                onClick={() => window.location.href = "/references"}
+                className="text-sm"
+              >
+                References
+              </Button>
             </div>
 
             {/* Action Buttons */}

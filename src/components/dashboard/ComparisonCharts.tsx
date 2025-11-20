@@ -2,6 +2,8 @@ import { Card } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } from "recharts";
 import { useState } from "react";
 import { ScenarioToggle } from "./ScenarioToggle";
+import { MethodologyTooltip } from "./MethodologyTooltip";
+import { DataQualityBadge } from "./DataQualityBadge";
 
 const costPerAttendeeData = [
   { name: "VivaTech", cost: 160, label: "€140–180" },
@@ -67,7 +69,10 @@ export const ComparisonCharts = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <Card className="p-6 hover-scale transition-all">
-          <h3 className="text-lg font-semibold mb-2">Cost per Qualified Attendee</h3>
+          <div className="flex items-center justify-between mb-2">
+            <h3 className="text-lg font-semibold">Cost per Qualified Attendee</h3>
+            <DataQualityBadge type="modeled" />
+          </div>
           <p className="text-sm text-muted-foreground mb-4">
             Beauty events deliver 180–300x greater cost efficiency
           </p>
@@ -87,6 +92,13 @@ export const ComparisonCharts = () => {
               <Bar dataKey="cost" fill="hsl(var(--chart-1))" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
+          <div className="mt-4 pt-4 border-t border-border">
+            <MethodologyTooltip
+              title="Cost-Per-Attendee Premium Calculation"
+              methodology="VivaTech: €350–450K ÷ 2,500 avg beauty attendees = €140–180 per attendee. Cosmoprof: €150–200K ÷ 255,500 attendees = €0.59–0.78 per attendee. Premium: €140 ÷ €0.78 = 179x to €180 ÷ €0.59 = 305x. Stated conservatively as 180–300x."
+              sources={["VivaTech booth pricing", "Cosmoprof participation costs (€300–600/m²)", "Official event attendance data"]}
+            />
+          </div>
         </Card>
 
         <Card className="p-6">
