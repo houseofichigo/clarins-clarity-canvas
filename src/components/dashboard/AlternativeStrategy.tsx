@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from "recharts";
 import { Badge } from "@/components/ui/badge";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, TrendingUp } from "lucide-react";
 
 const impactData = [
   { metric: "Press Mentions", vivatech: 7, alternative: 95 },
@@ -27,6 +27,42 @@ const timeline = [
   { quarter: "Q3–Q4", event: "Influencer Campaign", focus: "Digital Amplification", investment: "€80–120K" },
 ];
 
+const scenarioScores = [
+  {
+    scenario: "A: VivaTech",
+    cost: 4,
+    reach: 2,
+    pressPotential: 3,
+    leadPotential: 2,
+    riskLevel: 8,
+    differentiation: 2,
+    capabilityFit: 3,
+    totalScore: 24
+  },
+  {
+    scenario: "B: Multi-Event Portfolio",
+    cost: 9,
+    reach: 9,
+    pressPotential: 9,
+    leadPotential: 9,
+    riskLevel: 3,
+    differentiation: 9,
+    capabilityFit: 8,
+    totalScore: 56
+  },
+  {
+    scenario: "C: Owned Innovation + PR Tour",
+    cost: 8,
+    reach: 7,
+    pressPotential: 8,
+    leadPotential: 7,
+    riskLevel: 4,
+    differentiation: 10,
+    capabilityFit: 9,
+    totalScore: 53
+  }
+];
+
 export const AlternativeStrategy = () => {
   return (
     <div className="container mx-auto px-6 py-8">
@@ -34,6 +70,81 @@ export const AlternativeStrategy = () => {
         <h2 className="text-h1 font-bold text-foreground mb-2">Alternative Strategy: 2026 Recommended Portfolio</h2>
         <p className="text-muted-foreground">Optimized budget allocation delivering 5–15x performance improvement across all metrics</p>
       </div>
+
+      {/* Strategic Scenarios Comparison */}
+      <Card className="p-6 mb-6">
+        <div className="flex items-center gap-3 mb-4">
+          <TrendingUp className="h-6 w-6 text-primary" />
+          <h3 className="text-lg font-semibold">Strategic Scenario Comparison</h3>
+        </div>
+        <p className="text-sm text-muted-foreground mb-6">
+          Side-by-side scoring across 7 critical dimensions (1-10 scale)
+        </p>
+        <div className="overflow-x-auto">
+          <table className="w-full">
+            <thead>
+              <tr className="border-b border-border">
+                <th className="text-left py-3 px-4 font-semibold text-sm">Scenario</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Cost Efficiency</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Reach</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Press Potential</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Lead Quality</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Risk</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Differentiation</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Capability Fit</th>
+                <th className="text-center py-3 px-4 font-semibold text-sm">Total Score</th>
+              </tr>
+            </thead>
+            <tbody>
+              {scenarioScores.map((scenario, idx) => (
+                <tr 
+                  key={idx} 
+                  className={`border-b border-border/50 ${
+                    scenario.scenario.includes("B:") ? "bg-success/5" : 
+                    scenario.scenario.includes("A:") ? "bg-destructive/5" : ""
+                  }`}
+                >
+                  <td className="py-3 px-4 font-semibold">{scenario.scenario}</td>
+                  <td className="text-center py-3 px-4">
+                    <Badge variant={scenario.cost >= 7 ? "default" : "secondary"}>{scenario.cost}</Badge>
+                  </td>
+                  <td className="text-center py-3 px-4">
+                    <Badge variant={scenario.reach >= 7 ? "default" : "secondary"}>{scenario.reach}</Badge>
+                  </td>
+                  <td className="text-center py-3 px-4">
+                    <Badge variant={scenario.pressPotential >= 7 ? "default" : "secondary"}>{scenario.pressPotential}</Badge>
+                  </td>
+                  <td className="text-center py-3 px-4">
+                    <Badge variant={scenario.leadPotential >= 7 ? "default" : "secondary"}>{scenario.leadPotential}</Badge>
+                  </td>
+                  <td className="text-center py-3 px-4">
+                    <Badge variant={scenario.riskLevel <= 4 ? "default" : "destructive"}>{scenario.riskLevel}</Badge>
+                  </td>
+                  <td className="text-center py-3 px-4">
+                    <Badge variant={scenario.differentiation >= 7 ? "default" : "secondary"}>{scenario.differentiation}</Badge>
+                  </td>
+                  <td className="text-center py-3 px-4">
+                    <Badge variant={scenario.capabilityFit >= 7 ? "default" : "secondary"}>{scenario.capabilityFit}</Badge>
+                  </td>
+                  <td className="text-center py-3 px-4">
+                    <Badge 
+                      variant={scenario.totalScore >= 50 ? "default" : "secondary"}
+                      className="min-w-[3rem] font-bold"
+                    >
+                      {scenario.totalScore}/70
+                    </Badge>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="mt-4 p-4 bg-success/10 border border-success/20 rounded-lg">
+          <p className="text-sm font-semibold text-success">
+            Recommendation: Scenario B (Multi-Event Portfolio) scores 56/70, delivering 2.3x better performance than VivaTech
+          </p>
+        </div>
+      </Card>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <Card className="p-6">

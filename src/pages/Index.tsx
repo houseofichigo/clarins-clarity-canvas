@@ -7,7 +7,11 @@ import { GOConditionsMatrix } from "@/components/dashboard/GOConditionsMatrix";
 import { DecisionTree } from "@/components/dashboard/DecisionTree";
 import { RiskMatrix } from "@/components/dashboard/RiskMatrix";
 import { CompetitiveAnalysis } from "@/components/dashboard/CompetitiveAnalysis";
+import { FitScoreRadar } from "@/components/dashboard/FitScoreRadar";
+import { EventComparisonTable } from "@/components/dashboard/EventComparisonTable";
+import { InnovationStrengths } from "@/components/dashboard/InnovationStrengths";
 import { AlternativeStrategy } from "@/components/dashboard/AlternativeStrategy";
+import { StrategicRoadmap } from "@/components/dashboard/StrategicRoadmap";
 import { InsightCard } from "@/components/dashboard/InsightCard";
 import { ConfidenceMeter } from "@/components/dashboard/ConfidenceMeter";
 const Index = () => {
@@ -17,6 +21,9 @@ const Index = () => {
       {/* Section 1: Executive Summary */}
       <section id="executive-summary" className="print-page-break">
         <ExecutiveSummary />
+        <div className="container mx-auto px-6 py-8">
+          <FitScoreRadar />
+        </div>
       </section>
       
       {/* Section 2: Strategic KPIs */}
@@ -39,6 +46,10 @@ const Index = () => {
       
       <div className="container mx-auto px-6 py-8">
         <LeadQualityMetrics />
+      </div>
+
+      <div className="container mx-auto px-6 py-8">
+        <EventComparisonTable />
       </div>
       
       <div className="section-divider my-8" />
@@ -89,6 +100,13 @@ This section evaluates whether VivaTech 2025 meets the strategic and financial r
       </section>
       
       <div className="section-divider my-8" />
+
+      {/* Section 5.5: Innovation Strengths */}
+      <section id="innovation-strengths" className="py-4">
+        <InnovationStrengths />
+      </section>
+
+      <div className="section-divider my-8" />
       
       {/* Section 6: Alternative Strategy */}
       <section id="alternative" className="py-4 print-page-break">
@@ -96,6 +114,13 @@ This section evaluates whether VivaTech 2025 meets the strategic and financial r
         <div className="container mx-auto px-6 mt-8">
           <InsightCard type="action" title="Strategic Outcome" content="The alternative portfolio delivers 5–15x performance improvement, sustained 12-month visibility, and €565K budget efficiency. This approach aligns with Clarins' authentic beauty innovation narrative while maximizing qualified buyer engagement and media reach." />
         </div>
+      </section>
+
+      <div className="section-divider my-8" />
+
+      {/* Section 7: Strategic Roadmap */}
+      <section id="strategic-roadmap" className="py-4 print-page-break">
+        <StrategicRoadmap />
       </section>
       
       <footer className="border-t border-border mt-12 py-8 no-print">
@@ -119,7 +144,7 @@ This section evaluates whether VivaTech 2025 meets the strategic and financial r
                 <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
-                View All References & Citations (228 Sources)
+                View All References & Citations (115 Sources)
               </a>
             </div>
           </div>
