@@ -6,7 +6,7 @@ const goConditions = [
   {
     condition: "Multi-year €500K+/year investment",
     status: false,
-    rationale: "Current proposal is one-time €350–450K with no multi-year commitment",
+    rationale: "The optimal approach would be a €500K multi-year (3-year) commitment to build long-term momentum at VivaTech.",
   },
   {
     condition: "Major strategic announcement",
