@@ -19,11 +19,11 @@ const roiData = {
     { name: "Cosmoprof", roi: 3.0 },
   ],
   "mid-range": [
-    { name: "VivaTech", roi: 1.2 },
+    { name: "VivaTech", roi: 0.8 },
     { name: "Cosmoprof", roi: 4.0 },
   ],
   optimistic: [
-    { name: "VivaTech", roi: 2.5 },
+    { name: "VivaTech", roi: 2.0 },
     { name: "Cosmoprof", roi: 5.0 },
   ],
 };
@@ -31,27 +31,24 @@ const roiData = {
 const roiSensitivityData = {
   conservative: [
     { leads: 8, vivatech: 0.1, cosmoprof: 3.0 },
-    { leads: 15, vivatech: 0.5, cosmoprof: 3.5 },
-    { leads: 25, vivatech: 1.0, cosmoprof: 4.0 },
-    { leads: 40, vivatech: 1.5, cosmoprof: 4.5 },
-    { leads: 60, vivatech: 2.0, cosmoprof: 5.0 },
-    { leads: 80, vivatech: 2.3, cosmoprof: 5.5 },
+    { leads: 12, vivatech: 0.3, cosmoprof: 3.5 },
+    { leads: 25, vivatech: 0.6, cosmoprof: 4.0 },
+    { leads: 50, vivatech: 0.9, cosmoprof: 4.5 },
+    { leads: 80, vivatech: 1.2, cosmoprof: 5.0 },
   ],
   "mid-range": [
     { leads: 8, vivatech: 0.3, cosmoprof: 3.2 },
-    { leads: 15, vivatech: 0.8, cosmoprof: 3.7 },
+    { leads: 12, vivatech: 0.8, cosmoprof: 3.7 },
     { leads: 25, vivatech: 1.2, cosmoprof: 4.2 },
-    { leads: 40, vivatech: 1.8, cosmoprof: 4.7 },
-    { leads: 60, vivatech: 2.3, cosmoprof: 5.2 },
-    { leads: 80, vivatech: 2.8, cosmoprof: 5.8 },
+    { leads: 50, vivatech: 1.5, cosmoprof: 4.7 },
+    { leads: 80, vivatech: 1.8, cosmoprof: 5.2 },
   ],
   optimistic: [
     { leads: 8, vivatech: 0.5, cosmoprof: 3.5 },
-    { leads: 15, vivatech: 1.2, cosmoprof: 4.0 },
-    { leads: 25, vivatech: 1.8, cosmoprof: 4.5 },
-    { leads: 40, vivatech: 2.3, cosmoprof: 5.0 },
-    { leads: 60, vivatech: 2.8, cosmoprof: 5.5 },
-    { leads: 80, vivatech: 3.5, cosmoprof: 6.0 },
+    { leads: 12, vivatech: 1.0, cosmoprof: 4.0 },
+    { leads: 25, vivatech: 1.5, cosmoprof: 4.5 },
+    { leads: 50, vivatech: 2.0, cosmoprof: 5.0 },
+    { leads: 80, vivatech: 2.5, cosmoprof: 5.5 },
   ],
 };
 

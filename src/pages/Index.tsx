@@ -1,6 +1,7 @@
 import { DashboardHeader } from "@/components/dashboard/DashboardHeader";
 import { KPICards } from "@/components/dashboard/KPICards";
 import { ComparisonCharts } from "@/components/dashboard/ComparisonCharts";
+import { LeadQualityMetrics } from "@/components/dashboard/LeadQualityMetrics";
 import { GOConditionsMatrix } from "@/components/dashboard/GOConditionsMatrix";
 import { CompetitiveAnalysis } from "@/components/dashboard/CompetitiveAnalysis";
 import { AlternativeStrategy } from "@/components/dashboard/AlternativeStrategy";
@@ -11,6 +12,7 @@ const Index = () => {
       <DashboardHeader />
       <KPICards />
       <ComparisonCharts />
+      <LeadQualityMetrics />
       <GOConditionsMatrix />
       <CompetitiveAnalysis />
       <AlternativeStrategy />
