@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { FileDown, Moon, Sun, Menu } from "lucide-react";
 import clarinsLogo from "@/assets/clarins-logo.svg";
 import { Badge } from "@/components/ui/badge";
 
 export const StickyNav = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
   const [isSticky, setIsSticky] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
   const [progress, setProgress] = useState(0);
@@ -36,6 +39,22 @@ export const StickyNav = () => {
         top: offsetPosition,
         behavior: "smooth",
       });
+    }
+  };
+
+  const handleNavigate = (sectionId: string) => {
+    const isOnReferencesPage = location.pathname === '/references';
+    
+    if (isOnReferencesPage) {
+      // Navigate back to main dashboard first
+      navigate('/');
+      // Wait for navigation, then scroll
+      setTimeout(() => {
+        scrollToSection(sectionId);
+      }, 100);
+    } else {
+      // Already on main page, just scroll
+      scrollToSection(sectionId);
     }
   };
 
@@ -75,7 +94,7 @@ export const StickyNav = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection("executive-summary")}
+                onClick={() => handleNavigate("executive-summary")}
                 className="text-sm"
               >
                 Summary
@@ -83,7 +102,7 @@ export const StickyNav = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection("kpi-overview")}
+                onClick={() => handleNavigate("kpi-overview")}
                 className="text-sm"
               >
                 KPIs
@@ -91,7 +110,7 @@ export const StickyNav = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection("roi-analysis")}
+                onClick={() => handleNavigate("roi-analysis")}
                 className="text-sm"
               >
                 ROI Analysis
@@ -99,7 +118,7 @@ export const StickyNav = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection("competitive")}
+                onClick={() => handleNavigate("competitive")}
                 className="text-sm"
               >
                 Competitive
@@ -107,7 +126,7 @@ export const StickyNav = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => scrollToSection("alternative")}
+                onClick={() => handleNavigate("alternative")}
                 className="text-sm"
               >
                 Alternative
@@ -115,7 +134,7 @@ export const StickyNav = () => {
               <Button
                 variant="ghost"
                 size="sm"
-                onClick={() => window.location.href = "/references"}
+                onClick={() => navigate('/references')}
                 className="text-sm"
               >
                 References
