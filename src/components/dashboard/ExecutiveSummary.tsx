@@ -55,41 +55,41 @@ export const ExecutiveSummary = () => {
             </div>
           </Card>
 
-          {/* CENTER: Strategic Reallocation */}
-          <Card className="p-8 bg-card hover-scale shadow-xl border-2 border-info/30 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-info/5 rounded-full -mr-16 -mt-16" />
+          {/* CENTER: VivaTech Cost Estimate */}
+          <Card className="p-8 bg-card hover-scale shadow-xl border-2 border-warning/30 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-warning/5 rounded-full -mr-16 -mt-16" />
             <div className="relative">
               <div className="flex items-center justify-between mb-6">
-                <div className="w-14 h-14 rounded-full bg-info/10 flex items-center justify-center">
-                  <TrendingUp className="h-8 w-8 text-info" />
+                <div className="w-14 h-14 rounded-full bg-warning/10 flex items-center justify-center">
+                  <TrendingDown className="h-8 w-8 text-warning" />
                 </div>
-                <Badge className="text-lg px-4 py-1.5 bg-info text-white">
-                  Reallocation
+                <Badge className="text-lg px-4 py-1.5 bg-warning text-white">
+                  VivaTech Cost
                 </Badge>
               </div>
               <h2 className="text-h1 font-bold text-foreground mb-3">
-                Strategic Reallocation
+                VivaTech Investment
               </h2>
               <div className="mb-4">
-                <div className="text-5xl font-bold text-info mb-2">
-                  €460–670K
+                <div className="text-5xl font-bold text-warning mb-2">
+                  €350–450K
                 </div>
                 <p className="text-muted-foreground leading-relaxed">
-                  Alternative portfolio investment vs €350–450K VivaTech cost
+                  Estimated total investment for VivaTech 2025 participation
                 </p>
               </div>
               <div className="space-y-2 mt-6">
                 <div className="flex items-center gap-2 text-sm">
-                  <div className="w-2 h-2 rounded-full bg-info" />
-                  <span className="text-foreground">Delivers 3–5x ROI vs 0.1–2.5x</span>
+                  <div className="w-2 h-2 rounded-full bg-warning" />
+                  <span className="text-foreground">€140–180 per qualified attendee</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <div className="w-2 h-2 rounded-full bg-info" />
-                  <span className="text-foreground">255,500 buyers vs 2,000–3,000</span>
+                  <div className="w-2 h-2 rounded-full bg-warning" />
+                  <span className="text-foreground">Reaches 2,000–3,000 beauty professionals</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <div className="w-2 h-2 rounded-full bg-info" />
-                  <span className="text-foreground">€0.59–0.78 per attendee vs €140–180</span>
+                  <div className="w-2 h-2 rounded-full bg-warning" />
+                  <span className="text-foreground">Expected ROI: 0.1–2.5x</span>
                 </div>
               </div>
             </div>
