@@ -11,7 +11,7 @@ import { FitScoreRadar } from "@/components/dashboard/FitScoreRadar";
 import { EventComparisonTable } from "@/components/dashboard/EventComparisonTable";
 import { InnovationStrengths } from "@/components/dashboard/InnovationStrengths";
 import { AlternativeStrategy } from "@/components/dashboard/AlternativeStrategy";
-import { StrategicRoadmap } from "@/components/dashboard/StrategicRoadmap";
+
 import { InsightCard } from "@/components/dashboard/InsightCard";
 import { ConfidenceMeter } from "@/components/dashboard/ConfidenceMeter";
 const Index = () => {
@@ -116,12 +116,6 @@ This section evaluates whether VivaTech 2025 meets the strategic and financial r
         </div>
       </section>
 
-      <div className="section-divider my-8" />
-
-      {/* Section 7: Strategic Roadmap */}
-      <section id="strategic-roadmap" className="py-4 print-page-break">
-        <StrategicRoadmap />
-      </section>
       
       <footer className="border-t border-border mt-12 py-8 no-print">
         <div className="container mx-auto px-6">

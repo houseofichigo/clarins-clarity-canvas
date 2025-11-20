@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from "recharts";
 import { Badge } from "@/components/ui/badge";
-import { Lightbulb, Target, TrendingUp } from "lucide-react";
+import { Lightbulb, Target } from "lucide-react";
 
 const innovationAssets = [
   { asset: "CLARA AI Bot", sustainability: 6, digital: 9, aiExperience: 10, productRD: 7, customerExp: 9 },
@@ -18,13 +18,6 @@ const venueMapping = [
   { innovation: "Prestige heritage", bestVenue: "Cosmoprof", score: 10 },
 ];
 
-const differentiationData = [
-  { dimension: "Sustainability", clarins: 9, loreal: 8, lvmh: 7, esteeLauder: 6 },
-  { dimension: "Authenticity", clarins: 9, loreal: 6, lvmh: 7, esteeLauder: 7 },
-  { dimension: "Storytelling", clarins: 8, loreal: 9, lvmh: 10, esteeLauder: 7 },
-  { dimension: "Tech Depth", clarins: 6, loreal: 9, lvmh: 8, esteeLauder: 7 },
-  { dimension: "Market Reach", clarins: 5, loreal: 10, lvmh: 9, esteeLauder: 8 },
-];
 
 export const InnovationStrengths = () => {
   return (
@@ -123,40 +116,6 @@ export const InnovationStrengths = () => {
         </div>
       </Card>
 
-      {/* Differentiation Bar Chart */}
-      <Card className="p-6">
-        <h3 className="text-lg font-semibold mb-4 flex items-center gap-2">
-          <TrendingUp className="h-5 w-5 text-primary" />
-          Clarins vs Competitor Differentiation Profile
-        </h3>
-        <p className="text-sm text-muted-foreground mb-6">
-          Comparative strength analysis across 5 key brand dimensions (0-10 scale)
-        </p>
-        <ResponsiveContainer width="100%" height={350}>
-          <BarChart data={differentiationData} layout="horizontal">
-            <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-            <XAxis type="number" domain={[0, 10]} stroke="hsl(var(--muted-foreground))" />
-            <YAxis type="category" dataKey="dimension" stroke="hsl(var(--muted-foreground))" width={120} />
-            <Tooltip 
-              contentStyle={{ 
-                backgroundColor: "hsl(var(--card))", 
-                border: "1px solid hsl(var(--border))",
-                borderRadius: "var(--radius)"
-              }}
-            />
-            <Legend />
-            <Bar dataKey="clarins" fill="hsl(var(--chart-1))" name="Clarins" radius={[0, 8, 8, 0]} />
-            <Bar dataKey="loreal" fill="hsl(var(--chart-2))" name="L'Oréal" radius={[0, 8, 8, 0]} />
-            <Bar dataKey="lvmh" fill="hsl(var(--chart-4))" name="LVMH" radius={[0, 8, 8, 0]} />
-            <Bar dataKey="esteeLauder" fill="hsl(var(--chart-5))" name="Estée Lauder" radius={[0, 8, 8, 0]} />
-          </BarChart>
-        </ResponsiveContainer>
-        <div className="mt-4 p-4 bg-success/10 border border-success/20 rounded-lg">
-          <p className="text-sm font-semibold text-success">
-            Clarins Differentiation Advantage: Leading in Sustainability (9/10) and Authenticity (9/10) — perfect for beauty-focused events, not tech showcases
-          </p>
-        </div>
-      </Card>
     </div>
   );
 };
