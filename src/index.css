@@ -233,6 +233,14 @@ All colors MUST be HSL.
     page-break-before: always;
   }
   
+  .page-break-after {
+    page-break-after: always;
+  }
+  
+  .page-break-before {
+    page-break-before: always;
+  }
+  
   .card {
     break-inside: avoid;
   }

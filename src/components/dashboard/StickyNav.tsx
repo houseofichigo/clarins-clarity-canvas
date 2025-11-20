@@ -59,7 +59,7 @@ export const StickyNav = () => {
   };
 
   const handleExportPDF = () => {
-    window.print();
+    navigate('/print-all');
   };
 
   const toggleDarkMode = () => {
