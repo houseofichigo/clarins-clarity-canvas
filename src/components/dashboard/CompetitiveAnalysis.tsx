@@ -2,15 +2,15 @@ import { Card } from "@/components/ui/card";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from "recharts";
 
 const mindshareData = [
-  { name: "L'Oréal", mentions: 40, presence: 9 },
-  { name: "LVMH", mentions: 70, presence: 12 },
-  { name: "Clarins", mentions: 0, presence: 0 },
+  { name: "L'Oréal", pressMentions: 40, speakerSlots: 0, years: 9 },
+  { name: "LVMH", pressMentions: 0, speakerSlots: 70, years: 10 },
+  { name: "Clarins", pressMentions: 0, speakerSlots: 0, years: 0 },
 ];
 
 const investmentData = [
-  { name: "L'Oréal", investment: 625, size: 1000 },
-  { name: "LVMH", investment: 750, size: 3000 },
-  { name: "Clarins", investment: 400, size: 40 },
+  { name: "L'Oréal", investmentMin: 500, investmentMax: 750, boothSizeMin: 800, boothSizeMax: 1200 },
+  { name: "LVMH", investmentMin: 500, investmentMax: 1000, boothSizeMin: 3000, boothSizeMax: 3000 },
+  { name: "Clarins", investmentMin: 350, investmentMax: 450, boothSizeMin: 30, boothSizeMax: 50 },
 ];
 
 const innovationFitData = [
@@ -50,7 +50,7 @@ export const CompetitiveAnalysis = () => {
         <Card className="p-6">
           <h3 className="text-lg font-semibold mb-4">Competitor Mindshare</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Press mentions & years of presence at VivaTech
+            L'Oréal: 40+ press mentions, 9 years | LVMH: 70+ speaker slots, 10 years (founding partner)
           </p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={mindshareData}>
@@ -65,7 +65,9 @@ export const CompetitiveAnalysis = () => {
                 }}
               />
               <Legend />
-              <Bar dataKey="mentions" fill="hsl(var(--chart-1))" name="Press Mentions" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="pressMentions" fill="hsl(var(--chart-1))" name="Press Mentions" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="speakerSlots" fill="hsl(var(--chart-2))" name="Speaker Slots" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="years" fill="hsl(var(--chart-3))" name="Years Present" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 p-3 bg-muted/50 rounded-lg">
@@ -76,9 +78,9 @@ export const CompetitiveAnalysis = () => {
         </Card>
 
         <Card className="p-6">
-          <h3 className="text-lg font-semibold mb-4">Investment Benchmark</h3>
+          <h3 className="text-lg font-semibold mb-4">Investment & Booth Size Benchmark</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            Booth investment (€K) comparison
+            L'Oréal: €500–750K, 800–1,200m² | LVMH: €500K–1M+, 3,000m² | Clarins: €350–450K, 30–50m²
           </p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={investmentData}>
@@ -91,8 +93,19 @@ export const CompetitiveAnalysis = () => {
                   border: "1px solid hsl(var(--border))",
                   borderRadius: "var(--radius)"
                 }}
+                formatter={(value, name, props) => {
+                  if (name === "Investment Range (€K)") {
+                    return `€${props.payload.investmentMin}–${props.payload.investmentMax}K`;
+                  }
+                  if (name === "Booth Size Range (m²)") {
+                    return `${props.payload.boothSizeMin}–${props.payload.boothSizeMax}m²`;
+                  }
+                  return value;
+                }}
               />
-              <Bar dataKey="investment" fill="hsl(var(--chart-4))" radius={[8, 8, 0, 0]} />
+              <Legend />
+              <Bar dataKey="investmentMax" fill="hsl(var(--chart-4))" name="Investment Range (€K)" radius={[8, 8, 0, 0]} />
+              <Bar dataKey="boothSizeMax" fill="hsl(var(--chart-5))" name="Booth Size Range (m²)" radius={[8, 8, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
           <div className="mt-4 p-3 bg-muted/50 rounded-lg">
