@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { TrendingDown, TrendingUp, CheckCircle2, XCircle } from "lucide-react";
+import { TrendingDown, TrendingUp, CheckCircle2, XCircle, Mic } from "lucide-react";
+import { PodcastPlayer } from "./PodcastPlayer";
 
 export const ExecutiveSummary = () => {
   return (
@@ -16,6 +17,35 @@ export const ExecutiveSummary = () => {
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             Data-driven analysis reveals a clear strategic path forward
           </p>
+        </div>
+
+        {/* Audio Briefing Card */}
+        <div className="max-w-4xl mx-auto mb-8">
+          <Card className="p-8 bg-gradient-to-r from-gold/5 via-primary/5 to-gold/5 border-gold/30 shadow-xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-40 h-40 bg-gold/10 rounded-full -mr-20 -mt-20 blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-40 h-40 bg-primary/10 rounded-full -ml-20 -mb-20 blur-3xl" />
+            
+            <div className="relative">
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-gold/20 to-primary/20 flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <Mic className="h-7 w-7 text-gold" />
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-foreground mb-1 flex items-center gap-2">
+                    <span>🎙️</span> Executive Audio Briefing
+                  </h3>
+                  <p className="text-muted-foreground">
+                    5-minute strategic overview and recommendation
+                  </p>
+                </div>
+              </div>
+              
+              <PodcastPlayer 
+                src="/Clarins_Should_Skip_VivaTech_Save_Money.mp3"
+                title="VivaTech 2025 Strategic Decision"
+              />
+            </div>
+          </Card>
         </div>
 
         {/* Three Decision Pillars */}
