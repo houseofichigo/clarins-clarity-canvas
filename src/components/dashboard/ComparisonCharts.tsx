@@ -57,20 +57,23 @@ export const ComparisonCharts = () => {
 
   return (
     <div className="container mx-auto px-6 py-8">
-      <div className="flex items-center justify-between mb-6">
-        <h2 className="text-2xl font-bold text-foreground">ROI & Audience Analysis</h2>
+      <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+        <div>
+          <h2 className="text-h1 font-bold text-foreground mb-2">ROI & Audience Analysis</h2>
+          <p className="text-muted-foreground">Interactive scenario modeling across conservative, mid-range, and optimistic projections</p>
+        </div>
         <ScenarioToggle value={scenario} onValueChange={(v) => setScenario(v as any)} />
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="p-6">
-          <h3 className="text-lg font-semibold mb-4">Cost per Qualified Attendee</h3>
+        <Card className="p-6 hover-scale transition-all">
+          <h3 className="text-lg font-semibold mb-2">Cost per Qualified Attendee</h3>
           <p className="text-sm text-muted-foreground mb-4">
             Beauty events deliver 180–300x greater cost efficiency
           </p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={costPerAttendeeData}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" opacity={0.3} />
               <XAxis dataKey="name" stroke="hsl(var(--muted-foreground))" />
               <YAxis stroke="hsl(var(--muted-foreground))" />
               <Tooltip 
@@ -79,6 +82,7 @@ export const ComparisonCharts = () => {
                   border: "1px solid hsl(var(--border))",
                   borderRadius: "var(--radius)"
                 }}
+                cursor={{ fill: 'hsl(var(--muted) / 0.1)' }}
               />
               <Bar dataKey="cost" fill="hsl(var(--chart-1))" radius={[8, 8, 0, 0]} />
             </BarChart>
