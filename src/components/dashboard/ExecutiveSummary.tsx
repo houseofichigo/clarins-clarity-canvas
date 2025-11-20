@@ -81,7 +81,7 @@ export const ExecutiveSummary = () => {
               <div className="space-y-2 mt-6">
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-2 h-2 rounded-full bg-warning" />
-                  <span className="text-foreground">€140–180 per qualified attendee</span>
+                  <span className="text-foreground">€140–180 per qualified lead (not per attendee)</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
                   <div className="w-2 h-2 rounded-full bg-warning" />
@@ -120,16 +120,16 @@ export const ExecutiveSummary = () => {
               </div>
               <div className="space-y-2 mt-6">
                 <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle2 className="h-4 w-4 text-success" />
-                  <span className="text-foreground">5–15x better performance</span>
+                  <div className="w-2 h-2 rounded-full bg-success" />
+                  <span className="text-foreground">3–5x higher ROI vs 0.1–2.5x at VivaTech</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle2 className="h-4 w-4 text-success" />
-                  <span className="text-foreground">12+ months visibility</span>
+                  <div className="w-2 h-2 rounded-full bg-success" />
+                  <span className="text-foreground">255,500 beauty professionals (Cosmoprof alone)</span>
                 </div>
                 <div className="flex items-center gap-2 text-sm">
-                  <CheckCircle2 className="h-4 w-4 text-success" />
-                  <span className="text-foreground">255K qualified buyers</span>
+                  <div className="w-2 h-2 rounded-full bg-success" />
+                  <span className="text-foreground">€0.59–0.78 per attendee (180–300x lower cost)</span>
                 </div>
               </div>
             </div>
