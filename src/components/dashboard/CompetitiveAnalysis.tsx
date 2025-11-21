@@ -8,8 +8,8 @@ const mindshareData = [
 ];
 
 const investmentData = [
-  { name: "L'Oréal", investmentMin: 500, investmentMax: 750, boothSizeMin: 800, boothSizeMax: 1200 },
-  { name: "LVMH", investmentMin: 500, investmentMax: 1000, boothSizeMin: 3000, boothSizeMax: 3000 },
+  { name: "L'Oréal", investmentMin: 500, investmentMax: 750, boothSizeMin: 300, boothSizeMax: 300 },
+  { name: "LVMH", investmentMin: 500, investmentMax: 1000, boothSizeMin: 800, boothSizeMax: 800 },
   { name: "Clarins", investmentMin: 350, investmentMax: 450, boothSizeMin: 30, boothSizeMax: 50 },
 ];
 
@@ -80,7 +80,7 @@ export const CompetitiveAnalysis = () => {
         <Card className="p-6">
           <h3 className="text-lg font-semibold mb-4">Investment & Booth Size Benchmark</h3>
           <p className="text-sm text-muted-foreground mb-4">
-            L'Oréal: €500–750K, 800–1,200m² | LVMH: €500K–1M+, 3,000m² | Clarins: €350–450K, 30–50m²
+            L'Oréal: €500–750K, 300m² | LVMH: €500K–1M+, 800m² | Clarins: €350–450K, 30–50m²
           </p>
           <ResponsiveContainer width="100%" height={300}>
             <BarChart data={investmentData}>
